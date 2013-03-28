@@ -64,8 +64,8 @@ var titleCase = function(string) {
 	
 	var str = string.split(" ");
     
-    	for ( var i = 0; i < str.length; i++ )
-    	{
+    	for ( var i = 0; i < str.length; i++ ) {
+    	
         	var j = str[i].charAt(0).toUpperCase();
        		 str[i] = j + str[i].substr(1);
     	}
@@ -76,15 +76,12 @@ var titleCase = function(string) {
 titleCase("I finally figured it out!");
 
 //Change String Function
-/*var changeString = function(string,",","/") {
+var changeString = function(string) {
 	
-	var str = string;
-	var com = ",";
-	var sla = "/";
-	var spl = str.split("");
-	console.log(spl);
+	var str = string.replace(/,/g, "/");
+	console.log(str);
 };
-changeString("Hello everyone!");*/
+changeString("a,b,c");
 // Number Functions
 
 
