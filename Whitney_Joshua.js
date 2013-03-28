@@ -63,9 +63,42 @@ var checkUrl = function(url) {
 	
 };
 checkUrl("https://www.josh.com");
-//UpperCase Function
 
+//UpperCase Function                                     //does not work!!!
+var titleCase = function(string) {
+	
+	var str = string;
+	
+	for (var i = 0; i < str.length; i++) {
+		str[i].charAt(0).toUpperCase() + str[i].slice(1);
+		console.log(str[i]);
+	}
 
+};
+
+text = "Blah blah blah blah blah blah Eric \
+blah blah blah Eric blah blah Eric blah blah \
+blah blah blah blah blah Eric";
+
+var myName = "Eric";
+var hits = [];
+
+// Look for "E" in the text
+for(var i = 0; i < text.length; i++) {
+	if (text[i] == "E") {
+		// If we find it, add characters up to
+		// the length of my name to the array
+		for(var j = i; j < (myName.length + i); j++) {
+			hits.push(text[j]);
+		}
+	}
+}
+
+if (hits.length === 0) {
+	console.log("Your name wasn't found!");
+} else {
+	console.log(hits);
+}
 //Change String Function
 
 
@@ -81,15 +114,29 @@ checkUrl("https://www.josh.com");
 //Dates Number Function
 
 
-//Return Number Function
-
-
+//Return Number Function						//Need to add conditional if I have time
+var numberReturn = function(num) {
+	
+	console.log(Number(num));
+};
+numberReturn("875789");
 // Array Functions
 
 
 //Smallest Value Array Function
+var smallValue = function(array,num) {
+	
+	
+	for (var i = array[0]; i < array.length; i++){
+		if (num < array[i]) {
+			var num = array[i];
+			//return num;
+		}
+	}
 
-
+	console.log(num); 
+};
+smallValue( [1,4,7,9,10,14,15],12);
 //Total Value Function
 
 
