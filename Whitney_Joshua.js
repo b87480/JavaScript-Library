@@ -6,12 +6,13 @@
  */
 
 
-//Start Library
-
-// String Functions
 
 
-//Phone Number Function
+var myLibrary = function() {      //Start Library
+
+
+// STRING FUNCTIONS
+//PHONE NUMBER FUNCTION
 var checkPhone = function(phone) {
 	
 	var x = phone.length;
@@ -20,18 +21,14 @@ var checkPhone = function(phone) {
 	var z = w.lastIndexOf("-");
 	
 	if (x == 12 || y == 3 || z == 7) {
-		console.log("Good Phone Number!");
 		return true;
 	} else {
-		console.log("Bad Phone Number!");
 		return false;
-	}
-	
-	
-};
-checkPhone("123-456-7891");
+	}	
+}; //END PHONE NUMBER FUNCTION
 
-//Email Function
+
+//EMAIL FUNCTION
 var checkEmail = function(email) {
 	
 	var x = email;
@@ -40,26 +37,26 @@ var checkEmail = function(email) {
 	
 		if (a < 1 || d < a + 2 || d + 2 >= x.length) {
   			return false;
-  			}
-};
-checkEmail("jwhitney114@gmail");
+  		} else {
+  			return true;
+  		}
+}; //END EMAIL FUNCTION
 
 
-
-//URL Function
+//URL FUNCTION
 var checkUrl = function(url) {
 	
 	if (url.startsWith("http://")) {
-		console.log("true");
+		return true;
 	} else if (url.startsWith("https://")) {
-		console.log("true");
+		return true;
 	} else {
-		console.log("false");
+		return false;
 	}
-};
-checkUrl("httpp://www.josh.com");
+};//END URL FUNCTION
 
-//UpperCase Function                                    
+
+//UPPERCASE FUNCTION                                   
 var titleCase = function(string) {
 	
 	var str = string.split(" ");
@@ -67,59 +64,64 @@ var titleCase = function(string) {
     	for ( var i = 0; i < str.length; i++ ) {
     	
         	var j = str[i].charAt(0).toUpperCase();
-       		 str[i] = j + str[i].substr(1);
+       		str[i] = j + str[i].substr(1);
     	}
-    console.log(str.join(" "));
-    return str.join(" ");
-	
-};
-titleCase("I finally figured it out!");
+    return str.join(" ");	
+};//END UPPERCASE FUNCTION
 
-//Change String Function
+
+//CHANGE STRING FUNCTION
 var changeString = function(string) {
 	
 	var str = string.replace(/,/g, "/");
-	console.log(str);
-};
-changeString("a,b,c");
+	return str;
+};//END CHANGE STRING FUNCTION
+
+
 // Number Functions
-
-
 //Format a Number Function
-
+var formatNumber = function(num) {
+	
+	var n = num.toFixed(3);
+	return n;
+};//END FORMAT FUNCTION
 
 //Fuzzy-Match Number Function
-
-
 //Dates Number Function
 
-
-//Return Number Function						//Need to add conditional if I have time
+//Return Number Function						
 var numberReturn = function(num) {
 	
-	console.log(Number(num));
-};
-numberReturn("875789");
-// Array Functions
-
-
-//Smallest Value Array Function
-var smallValue = function(array,num) {
+	return Number(num);
 	
-	for (var i = 0; i < array.length; i++) {
-		if (num < array[i]) {
-			var num = array[i];
-			//return num;
-		}
+};//END RETURN NUMBER FUNCTION
+
+
+// Array Functions
+//Smallest Value Array Function
+//Total Value Function
+//Array Sorter Function
+	return {
+		"checkPhone"	: checkPhone,
+		"checkEmail"	: checkEmail,
+		"checkUrl"		: checkUrl,
+		"titleCase"		: titleCase,
+		"changeString"	: changeString,
+		"numberReturn"	: numberReturn,
+		"formatNumber"	: formatNumber
 	}
 
-	console.log(num); 
-};
-smallValue([1,4,7,9,10,14,15],12);
-//Total Value Function
+}  //End Library
+
+var newLibrary = new myLibrary();
+
+console.log("Check Phone Number: " + newLibrary.checkPhone("123-456-7899"));
+console.log("Check Email: " + newLibrary.checkEmail("jwhitney114@gmail.com"));
+console.log("Check URL: " + newLibrary.checkUrl("https://google.com"));
+console.log("Capitalize first Letter: " + newLibrary.titleCase("I did it ha ha ha!"));
+console.log("Change String: " + newLibrary.changeString("a,b,c"));
+console.log("Number Return: " + newLibrary.numberReturn("12389706"));
+console.log("Format Number: " + newLibrary.formatNumber(1.234567));
 
 
-//Array Sorter Function
 
-
-//End Library
