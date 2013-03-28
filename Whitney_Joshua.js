@@ -49,59 +49,42 @@ checkEmail("jwhitney114@gmail");
 //URL Function
 var checkUrl = function(url) {
 	
-	var web = url;
-	var x = web.indexOf("http://");
-	var y = web.indexOf("https://");
-	
-	if (x === 0 || y === 0) {
-		console.log("Valid Web Site");
-		return true;
+	if (url.startsWith("http://")) {
+		console.log("true");
+	} else if (url.startsWith("https://")) {
+		console.log("true");
 	} else {
-		console.log("Not a Valid Website!");
-		return false;
+		console.log("false");
 	}
-	
 };
-checkUrl("https://www.josh.com");
+checkUrl("httpp://www.josh.com");
 
-//UpperCase Function                                     //does not work!!!
+//UpperCase Function                                    
 var titleCase = function(string) {
 	
-	var str = string;
+	var str = string.split(" ");
+    
+    	for ( var i = 0; i < str.length; i++ )
+    	{
+        	var j = str[i].charAt(0).toUpperCase();
+       		 str[i] = j + str[i].substr(1);
+    	}
+    console.log(str.join(" "));
+    return str.join(" ");
 	
-	for (var i = 0; i < str.length; i++) {
-		str[i].charAt(0).toUpperCase() + str[i].slice(1);
-		console.log(str[i]);
-	}
-
 };
+titleCase("I finally figured it out!");
 
-text = "Blah blah blah blah blah blah Eric \
-blah blah blah Eric blah blah Eric blah blah \
-blah blah blah blah blah Eric";
-
-var myName = "Eric";
-var hits = [];
-
-// Look for "E" in the text
-for(var i = 0; i < text.length; i++) {
-	if (text[i] == "E") {
-		// If we find it, add characters up to
-		// the length of my name to the array
-		for(var j = i; j < (myName.length + i); j++) {
-			hits.push(text[j]);
-		}
-	}
-}
-
-if (hits.length === 0) {
-	console.log("Your name wasn't found!");
-} else {
-	console.log(hits);
-}
 //Change String Function
-
-
+/*var changeString = function(string,",","/") {
+	
+	var str = string;
+	var com = ",";
+	var sla = "/";
+	var spl = str.split("");
+	console.log(spl);
+};
+changeString("Hello everyone!");*/
 // Number Functions
 
 
@@ -126,8 +109,7 @@ numberReturn("875789");
 //Smallest Value Array Function
 var smallValue = function(array,num) {
 	
-	
-	for (var i = array[0]; i < array.length; i++){
+	for (var i = 0; i < array.length; i++) {
 		if (num < array[i]) {
 			var num = array[i];
 			//return num;
@@ -136,7 +118,7 @@ var smallValue = function(array,num) {
 
 	console.log(num); 
 };
-smallValue( [1,4,7,9,10,14,15],12);
+smallValue([1,4,7,9,10,14,15],12);
 //Total Value Function
 
 
