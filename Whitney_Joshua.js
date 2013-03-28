@@ -12,9 +12,27 @@
 
 
 //Phone Number Function
+var checkPhone = function(phone) {
+	
+	var x = phone.length;
+	var w = "-";
+	var y = w.indexOf("-");
+	var z = w.lastIndexOf("-");
+	
+	if (x == 12 || y == 3 || z == 7) {
+		console.log("Good Phone Number!");
+		return true;
+	} else {
+		console.log("Bad Phone Number!");
+		return false;
+	}
+	
+	
+};
+checkPhone("123-4567891");
 
 //Email Function
-function checkEmail(email) {
+var checkEmail = function(email) {
 	
 	var x = email;
 	var a = x.indexOf("@");
