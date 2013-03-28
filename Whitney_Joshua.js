@@ -29,7 +29,7 @@ var checkPhone = function(phone) {
 	
 	
 };
-checkPhone("123-4567891");
+checkPhone("123-456-7891");
 
 //Email Function
 var checkEmail = function(email) {
@@ -47,8 +47,22 @@ checkEmail("jwhitney114@gmail");
 
 
 //URL Function
-
-
+var checkUrl = function(url) {
+	
+	var web = url;
+	var x = web.indexOf("http://");
+	var y = web.indexOf("https://");
+	
+	if (x === 0 || y === 0) {
+		console.log("Valid Web Site");
+		return true;
+	} else {
+		console.log("Not a Valid Website!");
+		return false;
+	}
+	
+};
+checkUrl("https://www.josh.com");
 //UpperCase Function
 
 
